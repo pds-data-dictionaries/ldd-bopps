@@ -41,7 +41,7 @@ are located at https://pds-data-dictionaries.github.io/ldd-bopps.
 
      EXAMPLE
 
-     [PDS Data Dictionaries Page](https://pds.nasa.gov/datastandards/dictionaries/#sp)
+     [PDS Data Dictionaries Page](https://pds.nasa.gov/datastandards/dictionaries/)
 
      The GitHub link will exist once there is an official first release of
      the dictionary (typically part of a system build) for the namespace. The
@@ -55,7 +55,7 @@ are located at https://pds-data-dictionaries.github.io/ldd-bopps.
        * Review the [Change Log] (ChangeLog.md)
        * Review the [Change Log] (src/CHANGELOG.md)
 -->     
-* Download dictionary files from the [PDS Data Dictionaries Page](https://pds.nasa.gov/datastandards/dictionaries/#bopps)
+* Download dictionary files from the [PDS Data Dictionaries Page](https://pds.nasa.gov/datastandards/dictionaries/index-missions.shtml#bopps)
 * On [GitHub](../../releases/latest)
 * Review the [Change log](ChangeLog.md)
 
