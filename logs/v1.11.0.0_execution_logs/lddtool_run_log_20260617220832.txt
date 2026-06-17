@@ -1,9 +1,16 @@
 
+>>  ERROR 11179 data dictionary attribute is missing for overwrite - Identifier:DataElement.DE.0001_NASA_PDS_1.pds.Dictionary.pds.description
+>>  ERROR 11179 data dictionary attribute is missing for overwrite - Identifier:DataElement.DE.0001_NASA_PDS_1.pds.Dictionary.pds.ldd_version_id
+>>  ERROR 11179 data dictionary attribute is missing for overwrite - Identifier:DataElement.DE.0001_NASA_PDS_1.pds.Dictionary.pds.name
+>>  ERROR 11179 data dictionary class is missing for overwrite - Identifier:ObjectClass.OC.0001_NASA_PDS_1.pds.Cartography_Group
+>>  ERROR 11179 data dictionary class is missing for overwrite - Identifier:ObjectClass.OC.0001_NASA_PDS_1.pds.Dictionary
+>>  ERROR 11179 data dictionary class is missing for overwrite - Identifier:ObjectClass.OC.0001_NASA_PDS_1.pds.Product_Dictionary
+>>  ERROR 11179 data dictionary class is missing for overwrite - Identifier:ObjectClass.OC.0001_NASA_PDS_1.pds.Rings
 >>  INFO LDDTOOL Version: 16.1.3
->>  INFO IM Version Id: 1.26.0.0
+>>  INFO IM Version Id: 1.11.0.0
 >>  INFO IM Namespace Id: pds
->>  INFO IM Label Version Id: 1.0
->>  INFO Date: Wed Jun 17 22:03:31 UTC 2026
+>>  INFO IM Label Version Id: 1.17
+>>  INFO Date: Wed Jun 17 22:08:38 UTC 2026
 >>  INFO PARENT_DIR: /tmp/lddtool-16.1.3/Data/
 
 >>> INFO Init:  - Config.Properties Namespace Id Found:bopps
@@ -11,31 +18,30 @@
 >>> INFO Init:  - LDD Dictionary_Type is Mission
 >>> INFO Attribute: <spacecraft_clock_start_count> - The default minimum characters provided by the attribute's data type is being overridden with 17
 >>> INFO Attribute: <spacecraft_clock_start_count> - The default maximum characters provided by the attribute's data type is being overridden with 17
->>> INFO Attribute: <spacecraft_clock_start_count> - This local attribute has a duplicate in the PDS4 data dictionary.
 >>> INFO Attribute: <spacecraft_clock_stop_count> - The default minimum characters provided by the attribute's data type is being overridden with 17
 >>> INFO Attribute: <spacecraft_clock_stop_count> - The default maximum characters provided by the attribute's data type is being overridden with 17
->>> INFO Attribute: <spacecraft_clock_stop_count> - This local attribute has a duplicate in the PDS4 data dictionary.
 >>> INFO Attribute: <total_integration_time> - The default minimum value provided by the attribute's data type is being overridden with 3
 
  -- LDDTool Execution Summary --
      0 warning(s)
-     0 error(s)
+     7 error(s)
      0 fatal error(s)
 
 Input:
 
-     - IM Version: 1Q00
+     - IM Version: 1B00
      - PDS4 Flag: true
      - LDD Flag: true
+     - IM Version: true
      - Export JSON Flag: true
 
      - Ingest LDD(s): /home/runner/work/ldd-bopps/ldd-bopps/src/PDS4_BOPPS_IngestLDD.xml
 
 Output:
 
-     - ./PDS4_BOPPS_1Q00_1000.xsd
-     - ./PDS4_BOPPS_1Q00_1000.sch
-     - ./PDS4_BOPPS_1Q00_1000.xml
-     - ./export/PDS4_PDS_1Q00.JSON
+     - ./PDS4_BOPPS_1B00_1000.xsd
+     - ./PDS4_BOPPS_1B00_1000.sch
+     - ./PDS4_BOPPS_1B00_1000.xml
+     - ./export/PDS4_PDS_1B00.JSON
 
->>  INFO Exit(0)
+>>  INFO Exit(1)
