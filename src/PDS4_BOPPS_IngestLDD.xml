@@ -3,7 +3,7 @@
 
 <Ingest_LDD xmlns="http://pds.nasa.gov/pds4/pds/v1"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1P00.xsd ">
+	xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1Q00.xsd ">
 	<name>BOPPS Data Dictionary</name>
 	<ldd_version_id>1.0</ldd_version_id>
 	<dictionary_type>Mission</dictionary_type>
