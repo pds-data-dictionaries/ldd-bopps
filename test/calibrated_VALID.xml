@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<Product_Observational 
+ xmlns="http://pds.nasa.gov/pds4/pds/v1" 
+ xmlns:bopps="http://pds.nasa.gov/pds4/mission/bopps/v1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <Identification_Area>
+  <logical_identifier>urn:nasa:pds:bopps2014:calibrated:jaca_3_041237320_n016_0118e_fit</logical_identifier>
+  <version_id>1.0</version_id>
+  <title>2014 BOPPS BIRC Observations, Calibrated Bias-Subtracted Image in electrons</title>
+  <information_model_version>[IM_VERSION]</information_model_version>
+  <product_class>Product_Observational</product_class>
+ </Identification_Area>
+ <Observation_Area>
+  <Time_Coordinates>
+   <start_date_time>2014-09-26T04:12:37.192Z</start_date_time>
+   <stop_date_time>2014-09-26T04:12:37.438Z</stop_date_time>
+  </Time_Coordinates>
+  <Primary_Result_Summary>
+    <purpose>Science</purpose>
+    <processing_level>Calibrated</processing_level>
+    <description>Imaged through a narrow-pass filter</description>
+    <Science_Facets>
+      <wavelength_range>Infrared</wavelength_range>
+      <discipline_name>Imaging</discipline_name>
+      <facet1>Grayscale</facet1>
+    </Science_Facets>
+  </Primary_Result_Summary>
+  <Investigation_Area>
+   <name>BOPPS</name>
+   <type>Mission</type>
+   <Internal_Reference>
+    <lid_reference>urn:nasa:pds:context:investigation:mission.bopps
+        </lid_reference>
+    <reference_type>data_to_investigation</reference_type>
+   </Internal_Reference>
+  </Investigation_Area>
+  <Observing_System>
+   <Observing_System_Component>
+    <name>BOPPS Gondola</name>
+    <type>Balloon</type>
+    <Internal_Reference>
+     <lid_reference>urn:nasa:pds:context:airborne:balloon.bopps</lid_reference>
+     <reference_type>is_airborne</reference_type>
+    </Internal_Reference>
+   </Observing_System_Component>
+   <Observing_System_Component>
+    <name>BOPPS Telescope</name>
+    <type>Telescope</type>
+    <Internal_Reference>
+     <lid_reference>urn:nasa:pds:context:telescope:bopps.sto</lid_reference>
+     <reference_type>is_telescope</reference_type>
+    </Internal_Reference>
+   </Observing_System_Component>
+   <Observing_System_Component>
+    <name>Bopps Infra-Red Camera (BIRC)</name>
+    <type>Instrument</type>
+    <Internal_Reference>
+     <lid_reference>urn:nasa:pds:context:instrument:birc.sto.telescope</lid_reference>
+     <reference_type>is_instrument</reference_type>
+    </Internal_Reference>
+   </Observing_System_Component>
+  </Observing_System>
+  <Target_Identification>
+   <name>C/2014 E2 (Jacques)</name>
+   <type>Comet</type>
+  </Target_Identification>
+  <Mission_Area>
+   <bopps:observation_parameters>
+    <bopps:spacecraft_clock_start_count>1411704757.191515</bopps:spacecraft_clock_start_count>
+    <bopps:spacecraft_clock_stop_count>1411704757.438341</bopps:spacecraft_clock_stop_count>
+    <bopps:total_integration_time unit="ms">121.800</bopps:total_integration_time>
+    <bopps:average_dn_for>737.292</bopps:average_dn_for>
+    <bopps:filter>3</bopps:filter>
+    <bopps:filter_wavelength unit="micrometer">4.00</bopps:filter_wavelength>
+    <bopps:product_type>CALIBRATED</bopps:product_type>
+    <bopps:observation_description>CO2 filter positions, set A, Jacques</bopps:observation_description>
+    <bopps:pointing_description>fixed on commanded ra, dec</bopps:pointing_description>
+   </bopps:observation_parameters>
+   <bopps:instrument_temperature>
+    <bopps:measured_at>filter wheel</bopps:measured_at>
+    <bopps:temperature unit="degC">-95.472</bopps:temperature>
+   </bopps:instrument_temperature>
+   <bopps:instrument_temperature>
+    <bopps:measured_at>window 1</bopps:measured_at>
+    <bopps:temperature unit="degC">-16.172</bopps:temperature>
+   </bopps:instrument_temperature>
+   <bopps:instrument_temperature>
+    <bopps:measured_at>camera housing</bopps:measured_at>
+    <bopps:temperature unit="degC">-9.702</bopps:temperature>
+   </bopps:instrument_temperature>
+   <bopps:telescope_geometry>
+    <bopps:gondola_latitude unit="deg">35.994</bopps:gondola_latitude>
+    <bopps:gondola_longitude unit="deg">-103.429</bopps:gondola_longitude>
+    <bopps:gondola_altitude unit="km">32.836</bopps:gondola_altitude>
+    <bopps:ra_cmd unit="deg">288.610</bopps:ra_cmd>
+    <bopps:dec_cmd unit="deg">14.782</bopps:dec_cmd>
+    <bopps:deviation_az unit="arcsec">0.293</bopps:deviation_az>
+    <bopps:deviation_el unit="arcsec">0.105</bopps:deviation_el>
+    <bopps:nod unit="arcsec">0.000</bopps:nod>
+    <bopps:starfix>32</bopps:starfix>
+    <bopps:solar_el unit="deg">-40.425</bopps:solar_el>
+    <bopps:boresight_el unit="deg">41.401</bopps:boresight_el>
+    <bopps:airmass>1.510</bopps:airmass>
+   </bopps:telescope_geometry>
+  </Mission_Area>
+  <Discipline_Area>
+  </Discipline_Area>
+ </Observation_Area>
+ <Reference_List>
+  <Internal_Reference>
+   <lidvid_reference>urn:nasa:pds:bopps2014:biassub:jaca_3_041237320_n016_0118b_fit::1.0</lidvid_reference>
+   <reference_type>data_to_raw_product</reference_type>
+  </Internal_Reference>
+ </Reference_List>
+ <File_Area_Observational>
+  <File>
+   <file_name>No.Data</file_name>
+  </File>
+  <!-- Data -->
+  <Header>
+   <offset unit="byte">0</offset>
+   <object_length unit="byte">2880</object_length>
+   <parsing_standard_id>FITS 3.0</parsing_standard_id>
+   <description>Minimal fits header. Just describes size of image.
+      </description>
+  </Header>
+  <Array_2D_Image>
+   <local_identifier>Image</local_identifier>
+   <offset unit="byte">2880</offset>
+   <axes>2</axes>
+   <axis_index_order>Last Index Fastest</axis_index_order>
+   <description>Calibrated bias subtracted image in units of electrons.
+      </description>
+   <Element_Array>
+    <data_type>IEEE754MSBSingle</data_type>
+   </Element_Array>
+   <Axis_Array>
+    <axis_name>Line</axis_name>
+    <elements>200</elements>
+    <sequence_number>1</sequence_number>
+   </Axis_Array>
+   <Axis_Array>
+    <axis_name>Sample</axis_name>
+    <elements>320</elements>
+    <sequence_number>2</sequence_number>
+   </Axis_Array>
+  </Array_2D_Image>
+ </File_Area_Observational>
+</Product_Observational>
