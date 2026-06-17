@@ -1,0 +1,950 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1P00.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<Ingest_LDD xmlns="http://pds.nasa.gov/pds4/pds/v1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1P00.xsd ">
+	<name>BOPPS Data Dictionary</name>
+	<ldd_version_id>1.0</ldd_version_id>
+	<dictionary_type>Mission</dictionary_type>
+	<full_name>Raymond Espiritu; Anne Raugh (ed.)</full_name>
+	<steward_id>SBN</steward_id>
+	<namespace_id>bopps</namespace_id>
+	<comment>
+		This revised dictionary is content-equivalent to the 1.0.0.1 version of the original
+		BOPPS mission dictionary schemas. It has been created by starting the with pre-archival 
+		version 1.0.0.0 IngestLDD file, then upgrading the Ingest LDD structure to conform to 
+		current PDS4 dictionary requirements, and then updating the mission attributes to reflect
+		the Software Interface Specification Rev. 1.2, effective June 2015, that was used to create
+		the archival labels. Unfortunately, this document did not include definitions for each
+		attribute. 
+	</comment>
+	<last_modification_date_time>2026-06-11</last_modification_date_time>
+
+	<DD_Attribute>
+		<name>average_dn_for</name>
+		<version_id>1.0</version_id>
+		<local_identifier>average_dn_for</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			Average pixel value of the BIRC field of regard in DN. 
+		</definition>
+
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+
+	<DD_Attribute>
+		<name>average_e_for</name>
+		<version_id>1.0</version_id>
+		<local_identifier>average_e_for</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			Average pixel value of the BIRC field of regard in electrons. 
+		</definition>
+
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+
+	<DD_Attribute>
+		<name>max_average_dn_for</name>
+		<version_id>1.0</version_id>
+		<local_identifier>max_average_dn_for</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			Maximum average pixel value of the BIRC field of regard in DN out of the set of images used 
+			to generate this data product.
+		</definition>
+
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+
+	<DD_Attribute>
+		<name>max_average_e_for</name>
+		<version_id>1.0</version_id>
+		<local_identifier>max_average_e_for</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			Maximum average pixel value of the BIRC field of regard in electrons out of the set of images used
+			to generate this data product.
+		</definition>
+
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<DD_Attribute>
+		<name>min_average_dn_for</name>
+		<version_id>1.0</version_id>
+		<local_identifier>min_average_dn_for</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			Minimum average pixel value of the BIRC field of regard in DN out of the set of images used
+			 to generate this data product.
+		</definition>
+
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+
+	<DD_Attribute>
+		<name>min_average_e_for</name>
+		<version_id>1.0</version_id>
+		<local_identifier>min_average_e_for</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			Minimum average pixel value of the BIRC field of regard in electrons out of the set of images used
+			 to generate this data product.
+		</definition>
+
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<DD_Attribute>
+		<name>deviation_az</name>
+		<version_id>1.0</version_id>
+		<local_identifier>deviation_az</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			The calculated deviation in azimuth of the telescope boresight from the commanded RA and DEC, measured in
+			arcseconds. Only applicable for RAW, BIAS_SUBTRACTED, or CALIBRATED data products.
+		</definition>
+
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+			<specified_unit_id>arcsec</specified_unit_id>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<DD_Attribute>
+		<name>deviation_el</name>
+		<version_id>1.0</version_id>
+		<local_identifier>deviation_el</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			The calculated deviation in elevation of the telescope boresight from the commanded RA and DEC, measured in
+			arcseconds. Only applicable for RAW, BIAS_SUBTRACTED, or CALIBRATED data products.
+		</definition>
+
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+			<specified_unit_id>arcsec</specified_unit_id>
+		</DD_Value_Domain>
+	</DD_Attribute>
+
+	<DD_Attribute>
+		<name>filter</name>
+		<version_id>1.0</version_id>
+		<local_identifier>filter</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			The number associated with a given wavelength filter on the filter wheel.
+		</definition>
+
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_Integer</value_data_type>
+
+			<DD_Permissible_Value>
+				<value>1</value>
+				<value_meaning>filter 1: R-band filter</value_meaning>
+			</DD_Permissible_Value>
+
+			<DD_Permissible_Value>
+				<value>2</value>
+				<value_meaning>filter 2: 4.6 micron filter</value_meaning>
+			</DD_Permissible_Value>
+
+			<DD_Permissible_Value>
+				<value>3</value>
+				<value_meaning>filter 3: 4.0 micron filter</value_meaning>
+			</DD_Permissible_Value>
+
+			<DD_Permissible_Value>
+				<value>4</value>
+				<value_meaning>filter 4: 4.27 micron filter</value_meaning>
+			</DD_Permissible_Value>
+
+			<DD_Permissible_Value>
+				<value>5</value>
+				<value_meaning>filter 5: 2.7 micron filter</value_meaning>
+			</DD_Permissible_Value>
+
+			<DD_Permissible_Value>
+				<value>6</value>
+				<value_meaning>filter 6: 2.47 micron filter</value_meaning>
+			</DD_Permissible_Value>
+
+			<DD_Permissible_Value>
+				<value>7</value>
+				<value_meaning>filter 7: 3.2 micron filter</value_meaning>
+			</DD_Permissible_Value>
+
+			<DD_Permissible_Value>
+				<value>8</value>
+				<value_meaning>filter 8: 3.2 micron filter</value_meaning>
+			</DD_Permissible_Value>
+
+			<DD_Permissible_Value>
+				<value>9</value>
+				<value_meaning>filter 9: 3.05 micron filter</value_meaning>
+			</DD_Permissible_Value>
+
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<DD_Attribute>
+		<name>filter_wavelength</name>
+		<version_id>1.0</version_id>
+		<local_identifier>filter_wavelength</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Anne Raugh</submitter_name>
+		<definition>
+			Wavelength corresponding to the filter number preceding this attribute, 
+			typically given in microns
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Length</unit_of_measure_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<DD_Attribute>
+		<name>gondola_altitude</name>
+		<version_id>1.0</version_id>
+		<local_identifier>gondola_altitude</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			The altitude of the gondola reported by the on-board GPS receiver in kilometers.
+		</definition>
+
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Length</unit_of_measure_type>
+			<specified_unit_id>km</specified_unit_id>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<DD_Attribute>
+		<name>gondola_latitude</name>
+		<version_id>1.0</version_id>
+		<local_identifier>gondola_latitude</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			The latitude of the gondola reported by the on-board GPS receiver in degrees.
+		</definition>
+
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+			<specified_unit_id>deg</specified_unit_id>
+		</DD_Value_Domain>
+	</DD_Attribute>
+
+	<DD_Attribute>
+		<name>gondola_longitude</name>
+		<version_id>1.0</version_id>
+		<local_identifier>gondola_longitude</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			The longitude of the gondola reported by the on-board GPS receiver in degrees.
+		</definition>
+
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+			<specified_unit_id>deg</specified_unit_id>
+		</DD_Value_Domain>
+	</DD_Attribute>
+
+	<DD_Attribute>
+		<name>measured_at</name>
+		<version_id>1.0</version_id>
+		<local_identifier>measured_at</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			The name of the sensor which is providing the measurement.
+		</definition>
+
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Short_String_Preserved</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+
+	<DD_Attribute>
+		<name>nod</name>
+		<version_id>1.0</version_id>
+		<local_identifier>nod</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			The commanded elevation offset of the telescope off-pointing from the 
+			commanded ra, dec.
+		</definition>
+
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+			<specified_unit_id>arcsec</specified_unit_id>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<DD_Attribute>
+		<name>observation_description</name>
+		<version_id>1.0</version_id>
+		<local_identifier>observation_description</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			General description of the observation. May include target name and a short description of observation goals.
+			For example, "Vesta target aquisition".
+		</definition>
+
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Short_String_Preserved</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+
+	<DD_Attribute>
+		<name>pointing_description</name>
+		<version_id>1.0</version_id>
+		<local_identifier>pointing_description</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			General description of the type of target pointing at the time of the observation. For example, "finding target"
+			describes the telescope being panned in several directions in order to aqcuire the target and center it in the field
+			of view. "target acquired" describes the telescope control such that it tries to minimize the drift error between
+			the commanded and measured azimuth and elevation.
+		</definition>
+
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Short_String_Preserved</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<DD_Attribute>
+		<name>centx</name>
+		<version_id>1.0</version_id>
+		<local_identifier>centx</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>ACR</submitter_name>
+		<definition>
+			No definition supplied.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Integer</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<DD_Attribute>
+		<name>centy</name>
+		<version_id>1.0</version_id>
+		<local_identifier>centy</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>ACR</submitter_name>
+		<definition>
+			No definition supplied.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Integer</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<DD_Attribute>
+		<name>product_type</name>
+		<version_id>1.0</version_id>
+		<local_identifier>product_type</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu; Anne Raugh (ed.)</submitter_name>
+		<definition>
+			The type of product generated: RAW, BIAS_SUBTRACTED, CALIBRATED, SHIFTED, COADDED, FLATFIELD, RELAYS, TEMPS
+    	</definition>
+
+		<DD_Value_Domain>
+			<enumeration_flag>true</enumeration_flag>
+			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+
+			<DD_Permissible_Value>
+				<value>RAW</value>
+				<value_meaning>Denotes the product as the raw single frame image. In a raw single frame image lower DN values
+				indicate more signal.</value_meaning>
+			</DD_Permissible_Value>
+
+			<DD_Permissible_Value>
+				<value>BIAS_SUBTRACTED</value>
+				<value_meaning>Denotes the product as the result of the signal frame subtracted from the bias frame. This
+				ordering of the subtraction results in an image where higher DN values indicate more signal.</value_meaning>
+			</DD_Permissible_Value>
+
+			<DD_Permissible_Value>
+				<value>CALIBRATED</value>
+				<value_meaning>Denotes the product as a bias subtracted image that has been calibrated.</value_meaning>
+			</DD_Permissible_Value>
+
+			<DD_Permissible_Value>
+				<value>SHIFTED</value>
+				<value_meaning>Denotes the product as the summed average of a sequence of calibrated images that have been
+				shifted in pixel space such that each pixel is spatially co-located to the same region of the sky.</value_meaning>
+			</DD_Permissible_Value>
+
+			<DD_Permissible_Value>
+				<value>COADDED</value>
+				<value_meaning>Denotes the product as the summed average of a sequence of calibrated images without being shifted
+				in pixel space.</value_meaning>
+			</DD_Permissible_Value>
+			
+			<DD_Permissible_Value>
+				<value>FLATFIELD</value>
+				<value_meaning>The associated product contains a flat field observation.</value_meaning>
+			</DD_Permissible_Value>
+			
+			<DD_Permissible_Value>
+				<value>RELAYS</value>
+				<value_meaning>Product is an ASCII table containing relay and cyro cooler pressure reported by the BIRC instrument.
+				</value_meaning>
+			</DD_Permissible_Value>
+
+			<DD_Permissible_Value>
+				<value>TEMPS</value>
+				<value_meaning>Product is an ASCII table containing the temperature values reported by the BIRC instrument.
+				</value_meaning>
+			</DD_Permissible_Value>
+			
+
+		</DD_Value_Domain>
+	</DD_Attribute>
+
+	<DD_Attribute>
+		<name>ra_cmd</name>
+		<version_id>1.0</version_id>
+		<local_identifier>ra_cmd</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			The commanded Right Ascension (RA) to point the telescope boresight.
+		</definition>
+
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+			<specified_unit_id>deg</specified_unit_id>
+		</DD_Value_Domain>
+	</DD_Attribute>
+
+	<DD_Attribute>
+		<name>dec_cmd</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dec_cmd</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			The commanded Declination (DEC) to point the telescope boresight.
+		</definition>
+
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+			<specified_unit_id>deg</specified_unit_id>			
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<DD_Attribute>
+		<name>spacecraft_clock_start_count</name>
+		<version_id>1.0</version_id>
+		<local_identifier>spacecraft_clock_start_count</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			The observation start time measured in seconds from 
+			January 1, 1970 00:00:00, Unix Epoch time. The spacecraft_clock_start_count is the 
+			same value for all image frames	created by a single start_observation command.
+		</definition>
+
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+			<formation_rule>The spacecraft clock time is a 17 digit number formatted as
+			 f17.6
+			</formation_rule>
+			<minimum_characters>17</minimum_characters>
+			<maximum_characters>17</maximum_characters>
+			<pattern>[0-9]{10}.[0-9]{6}</pattern>
+		</DD_Value_Domain>
+	</DD_Attribute>
+
+	<DD_Attribute>
+		<name>spacecraft_clock_stop_count</name>
+		<version_id>1.0</version_id>
+		<local_identifier>spacecraft_clock_stop_count</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			The observation stop time measured in seconds from January 1, 1970 00:00:00, Unix Epoch time. 
+			The observation stop time is measured at the end of the integration time for an individual
+			image frame. For a data product that is the result of two or more image frames it is the start
+			of the integration time of the first signal frame in the time ordered list of frames.
+		</definition>
+
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Short_String_Collapsed</value_data_type>
+			<formation_rule>The spacecraft clock time is a 17 digit number formatted as
+			 f17.6
+			</formation_rule>
+			<minimum_characters>17</minimum_characters>
+			<maximum_characters>17</maximum_characters>
+			<pattern>[0-9]{10}.[0-9]{6}</pattern>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<DD_Attribute>
+		<name>starfix</name>
+		<version_id>1.0</version_id>
+		<local_identifier>starfix</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			Integer counter of the number of star fixes executed by the star tracker. Used as a 
+			reference for the validity of the pointing information. If the starfix is zero then
+			the telescope position is not known and the rest of the pointing information should
+			be ignored.
+		</definition>
+
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Integer</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<DD_Attribute>
+		<name>solar_el</name>
+		<version_id>1.0</version_id>
+		<local_identifier>solar_el</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>ACR</submitter_name>
+		<definition>
+			Solar elongation. No further definition supplied.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<DD_Attribute>
+		<name>boresight_el</name>
+		<version_id>1.0</version_id>
+		<local_identifier>boresight_el</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>ACR</submitter_name>
+		<definition>
+			No definition supplied.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<DD_Attribute>
+		<name>airmass</name>
+		<version_id>1.0</version_id>
+		<local_identifier>airmass</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>ACR</submitter_name>
+		<definition>
+			Atmospheric airmass - that is, "airmass" is being used in the 
+			observational astronomy sense. No definition supplied.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<DD_Attribute>
+		<name>temperature</name>
+		<version_id>1.0</version_id>
+		<local_identifier>temperature</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			The calibrated temperature value measured by the sensor.
+		</definition>
+
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+			<specified_unit_id>degC</specified_unit_id>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<DD_Attribute>
+		<name>min_temperature</name>
+		<version_id>1.0</version_id>
+		<local_identifier>min_temperature</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			The minimum calibrated temperature value measured by the sensor.
+		</definition>
+
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+			<specified_unit_id>degC</specified_unit_id>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<DD_Attribute>
+		<name>max_temperature</name>
+		<version_id>1.0</version_id>
+		<local_identifier>max_temperature</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			The maximum calibrated temperature value measured by the sensor.
+		</definition>
+
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+			<specified_unit_id>degC</specified_unit_id>
+		</DD_Value_Domain>
+	</DD_Attribute>
+
+	<DD_Attribute>
+		<name>total_integration_time</name>
+		<version_id>1.0</version_id>
+		<local_identifier>total_integration_time</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			The total integration time for a single image. For a bias-subtracted image product
+			it is the total integration time for the signal frame. For a product that is the
+			result of more than one bias-signal frame pair it is the integration time of the
+			entire set of images. The bias frame always has an integration time of 3ms.
+	    </definition>
+
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<minimum_value>3</minimum_value>
+			<unit_of_measure_type>Units_of_Time</unit_of_measure_type>
+			<specified_unit_id>ms</specified_unit_id>
+		</DD_Value_Domain>
+	</DD_Attribute>
+
+
+	<!-- after this is the DD_Class definitions -->
+	<DD_Class>
+		<name>observation_parameters</name>
+		<version_id>1.0</version_id>
+		<local_identifier>observation_parameters</local_identifier>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>Contains all the parameters for the observation.</definition>
+		<element_flag>true</element_flag>
+
+		<!-- to do: enter for every attribute that goes in this class -->
+
+		<DD_Association>
+			<identifier_reference>spacecraft_clock_start_count</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>1</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<identifier_reference>spacecraft_clock_stop_count</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>1</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<identifier_reference>total_integration_time</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>1</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+		<DD_Association>
+			<identifier_reference>average_dn_for</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<identifier_reference>average_e_for</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+		<DD_Association>
+			<identifier_reference>max_average_dn_for</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<identifier_reference>min_average_dn_for</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<identifier_reference>max_average_e_for</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<identifier_reference>min_average_e_for</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<identifier_reference>filter</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>1</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+		<DD_Association>
+			<identifier_reference>filter_wavelength</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>1</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+		<DD_Association>
+			<identifier_reference>product_type</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>1</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<identifier_reference>observation_description</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>1</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<identifier_reference>pointing_description</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>1</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+		<DD_Association>
+			<identifier_reference>centx</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+		<DD_Association>
+			<identifier_reference>centy</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+	</DD_Class>
+
+	<DD_Class>
+		<name>instrument_temperature</name>
+		<version_id>1.0</version_id>
+		<local_identifier>instrument_temperature</local_identifier>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>Describes the temperatures measured by various sensors.</definition>
+		<element_flag>true</element_flag>
+
+		<DD_Association>
+			<identifier_reference>measured_at</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>1</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<identifier_reference>temperature</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+		<DD_Association>
+			<identifier_reference>min_temperature</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+		
+		<DD_Association>
+			<identifier_reference>max_temperature</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+	</DD_Class>
+	
+	<DD_Class>
+		<name>telescope_geometry</name>
+		<version_id>1.0</version_id>
+		<local_identifier>telescope_geometry</local_identifier>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			Contains information about the position and orientation of the telescope calculated at 
+			spacecraft_clock_read_time.
+		</definition>
+		<element_flag>true</element_flag>
+
+		<DD_Association>
+			<identifier_reference>gondola_latitude</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>1</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<identifier_reference>gondola_longitude</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>1</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<identifier_reference>gondola_altitude</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>1</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<identifier_reference>ra_cmd</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>1</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<identifier_reference>dec_cmd</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>1</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<identifier_reference>deviation_az</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<identifier_reference>deviation_el</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<identifier_reference>nod</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<identifier_reference>starfix</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+		<DD_Association>
+			<identifier_reference>solar_el</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+		<DD_Association>
+			<identifier_reference>boresight_el</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+		<DD_Association>
+			<identifier_reference>airmass</identifier_reference>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+	</DD_Class>
+
+</Ingest_LDD>
