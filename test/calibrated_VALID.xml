@@ -66,7 +66,7 @@
    <type>Comet</type>
   </Target_Identification>
   <Mission_Area>
-   <bopps:observation_parameters>
+   <bopps:Observation_Parameters>
     <bopps:spacecraft_clock_start_count>1411704757.191515</bopps:spacecraft_clock_start_count>
     <bopps:spacecraft_clock_stop_count>1411704757.438341</bopps:spacecraft_clock_stop_count>
     <bopps:total_integration_time unit="ms">121.800</bopps:total_integration_time>
@@ -76,20 +76,20 @@
     <bopps:product_type>CALIBRATED</bopps:product_type>
     <bopps:observation_description>CO2 filter positions, set A, Jacques</bopps:observation_description>
     <bopps:pointing_description>fixed on commanded ra, dec</bopps:pointing_description>
-   </bopps:observation_parameters>
-   <bopps:instrument_temperature>
+   </bopps:Observation_Parameters>
+   <bopps:Instrument_Temperature>
     <bopps:measured_at>filter wheel</bopps:measured_at>
     <bopps:temperature unit="degC">-95.472</bopps:temperature>
-   </bopps:instrument_temperature>
-   <bopps:instrument_temperature>
+   </bopps:Instrument_Temperature>
+   <bopps:Instrument_Temperature>
     <bopps:measured_at>window 1</bopps:measured_at>
     <bopps:temperature unit="degC">-16.172</bopps:temperature>
-   </bopps:instrument_temperature>
-   <bopps:instrument_temperature>
+   </bopps:Instrument_Temperature>
+   <bopps:Instrument_Temperature>
     <bopps:measured_at>camera housing</bopps:measured_at>
     <bopps:temperature unit="degC">-9.702</bopps:temperature>
-   </bopps:instrument_temperature>
-   <bopps:telescope_geometry>
+   </bopps:Instrument_Temperature>
+   <bopps:Telescope_Geometry>
     <bopps:gondola_latitude unit="deg">35.994</bopps:gondola_latitude>
     <bopps:gondola_longitude unit="deg">-103.429</bopps:gondola_longitude>
     <bopps:gondola_altitude unit="km">32.836</bopps:gondola_altitude>
@@ -102,7 +102,7 @@
     <bopps:solar_el unit="deg">-40.425</bopps:solar_el>
     <bopps:boresight_el unit="deg">41.401</bopps:boresight_el>
     <bopps:airmass>1.510</bopps:airmass>
-   </bopps:telescope_geometry>
+   </bopps:Telescope_Geometry>
   </Mission_Area>
   <Discipline_Area>
   </Discipline_Area>
