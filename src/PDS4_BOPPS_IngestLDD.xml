@@ -688,7 +688,7 @@
 
 	<!-- after this is the DD_Class definitions -->
 	<DD_Class>
-		<name>observation_parameters</name>
+		<name>Observation_Parameters</name>
 		<version_id>1.0</version_id>
 		<local_identifier>observation_parameters</local_identifier>
 		<submitter_name>Raymond Espiritu</submitter_name>
@@ -812,7 +812,7 @@
 	</DD_Class>
 
 	<DD_Class>
-		<name>instrument_temperature</name>
+		<name>Instrument_Temperature</name>
 		<version_id>1.0</version_id>
 		<local_identifier>instrument_temperature</local_identifier>
 		<submitter_name>Raymond Espiritu</submitter_name>
@@ -851,7 +851,7 @@
 	</DD_Class>
 	
 	<DD_Class>
-		<name>telescope_geometry</name>
+		<name>Telescope_Geometry</name>
 		<version_id>1.0</version_id>
 		<local_identifier>telescope_geometry</local_identifier>
 		<submitter_name>Raymond Espiritu</submitter_name>
