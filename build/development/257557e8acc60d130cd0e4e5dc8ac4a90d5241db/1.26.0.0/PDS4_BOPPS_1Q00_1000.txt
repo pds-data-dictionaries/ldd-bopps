@@ -1,0 +1,426 @@
+PDS4 Local Data Dictionary Processing Report
+
+Configuration:
+   LDDTool Version        16.1.3
+   LDD Version Id:        1.0
+   LDD Label Version Id:  1.0
+   LDD Discipline (T/F):  false
+   LDD Namespace URL:     http://pds.nasa.gov/pds4/
+   LDD URN Prefix:        urn:nasa:pds:
+   Time                   Wed Jun 17 22:00:52 UTC 2026
+   Common Schema          [PDS4_PDS_1Q00.xsd]
+   Common Schematron      [PDS4_PDS_1Q00.sch]
+   IM Version Id:         1.26.0.0
+   IM Namespace Id:       pds
+   IM Label Version Id:   1.0
+   IM Object Model        [UpperModel.pont]
+   IM Data Dictionary     [dd11179.pins]
+   IM Glossary            [Glossary.pins]
+   IM Document Spec       [DMDocument.pins]
+
+Parameters:
+   Input File             [/home/runner/work/ldd-bopps/ldd-bopps/src/PDS4_BOPPS_IngestLDD.xml]
+   PDS Processing         true
+   LDD Processing         true
+   Discipline LDD         false
+   Mission LDD            true
+   Write Attr Elements    false
+   Merge with Master      false
+
+Summary:
+   Classes                3
+   Attributes             32
+   Associations           32
+   Error messages         0
+   Warning messages       0
+   Information messages   0
+
+Detailed validation messages
+
+Parsed Input - Header:
+   LDD Name               BOPPS Data Dictionary
+   LDD Version            1.0
+   Full Name              Raymond Espiritu; Anne Raugh (ed.)
+   Steward                sbn
+   Namespace Id           bopps
+   Comment                
+		This revised dictionary is content-equivalent to the 1.0.0.1 version of the original
+		BOPPS mission dictionary schemas. It has been created by starting the with pre-archival 
+		version 1.0.0.0 IngestLDD file, then upgrading the Ingest LDD structure to conform to 
+		current PDS4 dictionary requirements, and then updating the mission attributes to reflect
+		the Software Interface Specification Rev. 1.2, effective June 2015, that was used to create
+		the archival labels. Unfortunately, this document did not include definitions for each
+		attribute. 
+	
+   Last Modification Time 2026-06-11
+   PDS4 Merge Flag        false
+
+Parsed Input - Attributes:
+
+   name                   average_dn_for
+   version                1.26
+   value data type        ASCII_Real
+   description             Average pixel value of the BIRC field of regard in DN. 
+
+   name                   average_e_for
+   version                1.26
+   value data type        ASCII_Real
+   description             Average pixel value of the BIRC field of regard in electrons. 
+
+   name                   max_average_dn_for
+   version                1.26
+   value data type        ASCII_Real
+   description             Maximum average pixel value of the BIRC field of regard in DN out of the set of images used to generate this data product. 
+
+   name                   max_average_e_for
+   version                1.26
+   value data type        ASCII_Real
+   description             Maximum average pixel value of the BIRC field of regard in electrons out of the set of images used to generate this data product. 
+
+   name                   min_average_dn_for
+   version                1.26
+   value data type        ASCII_Real
+   description             Minimum average pixel value of the BIRC field of regard in DN out of the set of images used to generate this data product. 
+
+   name                   min_average_e_for
+   version                1.26
+   value data type        ASCII_Real
+   description             Minimum average pixel value of the BIRC field of regard in electrons out of the set of images used to generate this data product. 
+
+   name                   deviation_az
+   version                1.26
+   value data type        ASCII_Real
+   description             The calculated deviation in azimuth of the telescope boresight from the commanded RA and DEC, measured in arcseconds. Only applicable for RAW, BIAS_SUBTRACTED, or CALIBRATED data products. 
+   unit of measure type   Units_of_Angle
+
+   name                   deviation_el
+   version                1.26
+   value data type        ASCII_Real
+   description             The calculated deviation in elevation of the telescope boresight from the commanded RA and DEC, measured in arcseconds. Only applicable for RAW, BIAS_SUBTRACTED, or CALIBRATED data products. 
+   unit of measure type   Units_of_Angle
+
+   name                   filter
+   version                1.26
+   value data type        ASCII_Integer
+   description             The number associated with a given wavelength filter on the filter wheel. 
+
+   name                   filter_wavelength
+   version                1.26
+   value data type        ASCII_Real
+   description             Wavelength corresponding to the filter number preceding this attribute, typically given in microns 
+   unit of measure type   Units_of_Length
+
+   name                   gondola_altitude
+   version                1.26
+   value data type        ASCII_Real
+   description             The altitude of the gondola reported by the on-board GPS receiver in kilometers. 
+   unit of measure type   Units_of_Length
+
+   name                   gondola_latitude
+   version                1.26
+   value data type        ASCII_Real
+   description             The latitude of the gondola reported by the on-board GPS receiver in degrees. 
+   unit of measure type   Units_of_Angle
+
+   name                   gondola_longitude
+   version                1.26
+   value data type        ASCII_Real
+   description             The longitude of the gondola reported by the on-board GPS receiver in degrees. 
+   unit of measure type   Units_of_Angle
+
+   name                   measured_at
+   version                1.26
+   value data type        ASCII_Short_String_Preserved
+   description             The name of the sensor which is providing the measurement. 
+
+   name                   nod
+   version                1.26
+   value data type        ASCII_Real
+   description             The commanded elevation offset of the telescope off-pointing from the commanded ra, dec. 
+   unit of measure type   Units_of_Angle
+
+   name                   observation_description
+   version                1.26
+   value data type        ASCII_Short_String_Preserved
+   description             General description of the observation. May include target name and a short description of observation goals. For example, "Vesta target aquisition". 
+
+   name                   pointing_description
+   version                1.26
+   value data type        ASCII_Short_String_Preserved
+   description             General description of the type of target pointing at the time of the observation. For example, "finding target" describes the telescope being panned in several directions in order to aqcuire the target and center it in the field of view. "target acquired" describes the telescope control such that it tries to minimize the drift error between the commanded and measured azimuth and elevation. 
+
+   name                   centx
+   version                1.26
+   value data type        ASCII_Integer
+   description             No definition supplied. 
+
+   name                   centy
+   version                1.26
+   value data type        ASCII_Integer
+   description             No definition supplied. 
+
+   name                   product_type
+   version                1.26
+   value data type        ASCII_Short_String_Collapsed
+   description             The type of product generated: RAW, BIAS_SUBTRACTED, CALIBRATED, SHIFTED, COADDED, FLATFIELD, RELAYS, TEMPS 
+
+   name                   ra_cmd
+   version                1.26
+   value data type        ASCII_Real
+   description             The commanded Right Ascension (RA) to point the telescope boresight. 
+   unit of measure type   Units_of_Angle
+
+   name                   dec_cmd
+   version                1.26
+   value data type        ASCII_Real
+   description             The commanded Declination (DEC) to point the telescope boresight. 
+   unit of measure type   Units_of_Angle
+
+   name                   spacecraft_clock_start_count
+   version                1.26
+   value data type        ASCII_Short_String_Collapsed
+   description             The observation start time measured in seconds from January 1, 1970 00:00:00, Unix Epoch time. The spacecraft_clock_start_count is the same value for all image frames created by a single start_observation command. 
+   minimum characters     17
+   maximum characters     17
+
+   name                   spacecraft_clock_stop_count
+   version                1.26
+   value data type        ASCII_Short_String_Collapsed
+   description             The observation stop time measured in seconds from January 1, 1970 00:00:00, Unix Epoch time. The observation stop time is measured at the end of the integration time for an individual image frame. For a data product that is the result of two or more image frames it is the start of the integration time of the first signal frame in the time ordered list of frames. 
+   minimum characters     17
+   maximum characters     17
+
+   name                   starfix
+   version                1.26
+   value data type        ASCII_Integer
+   description             Integer counter of the number of star fixes executed by the star tracker. Used as a reference for the validity of the pointing information. If the starfix is zero then the telescope position is not known and the rest of the pointing information should be ignored. 
+
+   name                   solar_el
+   version                1.26
+   value data type        ASCII_Real
+   description             Solar elongation. No further definition supplied. 
+   unit of measure type   Units_of_Angle
+
+   name                   boresight_el
+   version                1.26
+   value data type        ASCII_Real
+   description             No definition supplied. 
+   unit of measure type   Units_of_Angle
+
+   name                   airmass
+   version                1.26
+   value data type        ASCII_Real
+   description             Atmospheric airmass - that is, "airmass" is being used in the observational astronomy sense. No definition supplied. 
+
+   name                   temperature
+   version                1.26
+   value data type        ASCII_Real
+   description             The calibrated temperature value measured by the sensor. 
+   unit of measure type   Units_of_Temperature
+
+   name                   min_temperature
+   version                1.26
+   value data type        ASCII_Real
+   description             The minimum calibrated temperature value measured by the sensor. 
+   unit of measure type   Units_of_Temperature
+
+   name                   max_temperature
+   version                1.26
+   value data type        ASCII_Real
+   description             The maximum calibrated temperature value measured by the sensor. 
+   unit of measure type   Units_of_Temperature
+
+   name                   total_integration_time
+   version                1.26
+   value data type        ASCII_Real
+   description             The total integration time for a single image. For a bias-subtracted image product it is the total integration time for the signal frame. For a product that is the result of more than one bias-signal frame pair it is the integration time of the entire set of images. The bias frame always has an integration time of 3ms. 
+   minimum value          3
+   unit of measure type   Units_of_Time
+
+Parsed Input - Classes:
+
+   name                   Observation_Parameters
+   description            Contains all the parameters for the observation.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      bopps:spacecraft_clock_start_count
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:spacecraft_clock_stop_count
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:total_integration_time
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:average_dn_for
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:average_e_for
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:max_average_dn_for
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:min_average_dn_for
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:max_average_e_for
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:min_average_e_for
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:filter
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:filter_wavelength
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:product_type
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:observation_description
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:pointing_description
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:centx
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:centy
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Instrument_Temperature
+   description            Describes the temperatures measured by various sensors.
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      bopps:measured_at
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:temperature
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:min_temperature
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:max_temperature
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+   name                   Telescope_Geometry
+   description             Contains information about the position and orientation of the telescope calculated at spacecraft_clock_read_time. 
+   is abstract            false
+   is choice              false
+   subclass of            USER
+
+   Associations
+
+      local identifier      bopps:gondola_latitude
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:gondola_longitude
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:gondola_altitude
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:ra_cmd
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:dec_cmd
+      minimum occurrences   1
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:deviation_az
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:deviation_el
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:nod
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:starfix
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:solar_el
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:boresight_el
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+      local identifier      bopps:airmass
+      minimum occurrences   0
+      maximum occurrences   1
+      reference type        attribute_of
+
+End of Report

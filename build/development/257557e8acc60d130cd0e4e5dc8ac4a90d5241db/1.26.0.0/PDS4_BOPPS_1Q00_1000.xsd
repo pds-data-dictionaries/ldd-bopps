@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!-- PDS4 XML/Schema for Name Space Id:bopps  Version:1.0.0.0 - Wed Jun 17 22:00:52 UTC 2026 -->
+  <!-- Generated from the PDS4 Information Model Version 1.26.0.0 - System Build 16.1	 -->
+  <!-- *** This PDS4 product schema is an operational deliverable. *** -->
+  <!--                                                                           -->
+  <!--               Dictionary Stack                                            -->
+  <!-- 1.26.0.0 - pds: - Common Dictionary                                       -->
+  <!-- 1.0.0.0 - bopps: - BOPPS Data Dictionary                                  -->
+  <!--                                                                           -->
+  <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://pds.nasa.gov/pds4/mission/bopps/v1"
+    xmlns:bopps="http://pds.nasa.gov/pds4/mission/bopps/v1"
+    xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+    version="1.0.0.0">
+ 
+    <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1Q00.xsd"/>
+ 
+  <xs:annotation>
+    <xs:documentation>
+
+		This revised dictionary is content-equivalent to the 1.0.0.1 version of the original
+		BOPPS mission dictionary schemas. It has been created by starting the with pre-archival 
+		version 1.0.0.0 IngestLDD file, then upgrading the Ingest LDD structure to conform to 
+		current PDS4 dictionary requirements, and then updating the mission attributes to reflect
+		the Software Interface Specification Rev. 1.2, effective June 2015, that was used to create
+		the archival labels. Unfortunately, this document did not include definitions for each
+		attribute. 
+	
+    </xs:documentation>
+  </xs:annotation>
+ 
+  <xs:element name="Instrument_Temperature" type="bopps:Instrument_Temperature"> </xs:element>
+  <xs:element name="Observation_Parameters" type="bopps:Observation_Parameters"> </xs:element>
+  <xs:element name="Telescope_Geometry" type="bopps:Telescope_Geometry"> </xs:element>
+
+  <xs:complexType name="Instrument_Temperature">
+    <xs:annotation>
+      <xs:documentation>Describes the temperatures measured by various
+        sensors.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="measured_at" type="bopps:measured_at" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="temperature" type="bopps:temperature" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="min_temperature" type="bopps:min_temperature" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="max_temperature" type="bopps:max_temperature" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Observation_Parameters">
+    <xs:annotation>
+      <xs:documentation>Contains all the parameters for the
+        observation.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="spacecraft_clock_start_count" type="bopps:spacecraft_clock_start_count" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="spacecraft_clock_stop_count" type="bopps:spacecraft_clock_stop_count" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="total_integration_time" type="bopps:total_integration_time" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="average_dn_for" type="bopps:average_dn_for" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="average_e_for" type="bopps:average_e_for" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="max_average_dn_for" type="bopps:max_average_dn_for" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="min_average_dn_for" type="bopps:min_average_dn_for" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="max_average_e_for" type="bopps:max_average_e_for" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="min_average_e_for" type="bopps:min_average_e_for" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="filter" type="bopps:filter" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="filter_wavelength" type="bopps:filter_wavelength" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="product_type" type="bopps:product_type" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="observation_description" type="bopps:observation_description" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="pointing_description" type="bopps:pointing_description" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="centx" type="bopps:centx" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="centy" type="bopps:centy" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+    <!-- Begin assert statements for schematron - Enumerated Values -->
+    <!-- <xs:assert test="bopps:filter = ('1', '2', '3', '4', '5', '6', '7', '8', '9')"/> -->
+    <!-- <xs:assert test="bopps:product_type = ('BIAS_SUBTRACTED', 'CALIBRATED', 'COADDED', 'FLATFIELD', 'RAW', 'RELAYS', 'SHIFTED', 'TEMPS')"/> -->
+    <!-- End assert statements for schematron - Enumerated Values -->
+  </xs:complexType>
+
+  <xs:complexType name="Telescope_Geometry">
+    <xs:annotation>
+      <xs:documentation> Contains information about the position and
+        orientation of the telescope calculated at
+        spacecraft_clock_read_time. </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="gondola_latitude" type="bopps:gondola_latitude" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="gondola_longitude" type="bopps:gondola_longitude" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="gondola_altitude" type="bopps:gondola_altitude" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="ra_cmd" type="bopps:ra_cmd" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="dec_cmd" type="bopps:dec_cmd" minOccurs="1" maxOccurs="1"> </xs:element>
+      <xs:element name="deviation_az" type="bopps:deviation_az" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="deviation_el" type="bopps:deviation_el" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="nod" type="bopps:nod" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="starfix" type="bopps:starfix" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="solar_el" type="bopps:solar_el" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="boresight_el" type="bopps:boresight_el" minOccurs="0" maxOccurs="1"> </xs:element>
+      <xs:element name="airmass" type="bopps:airmass" minOccurs="0" maxOccurs="1"> </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+    <xs:annotation>
+      <xs:documentation>This section contains the simpleTypes that provide more constraints
+        than those at the base data type level. The simpleTypes defined here build on the base data
+        types. This is another component of the common dictionary and therefore falls within the
+        common namespace.
+      </xs:documentation>
+    </xs:annotation>
+
+  <xs:simpleType name="airmass">
+    <xs:annotation>
+      <xs:documentation> Atmospheric airmass - that is, "airmass" is
+        being used in the observational astronomy sense. No definition
+        supplied. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="average_dn_for">
+    <xs:annotation>
+      <xs:documentation> Average pixel value of the BIRC field of regard
+        in DN. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="average_e_for">
+    <xs:annotation>
+      <xs:documentation> Average pixel value of the BIRC field of regard
+        in electrons. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="boresight_el_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="boresight_el">
+    <xs:annotation>
+<xs:documentation> No definition supplied. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="bopps:boresight_el_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="centx">
+    <xs:annotation>
+<xs:documentation> No definition supplied. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="centy">
+    <xs:annotation>
+<xs:documentation> No definition supplied. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="dec_cmd_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="dec_cmd">
+    <xs:annotation>
+      <xs:documentation> The commanded Declination (DEC) to point the
+        telescope boresight. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="bopps:dec_cmd_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="deviation_az_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="deviation_az">
+    <xs:annotation>
+      <xs:documentation> The calculated deviation in azimuth of the
+        telescope boresight from the commanded RA and DEC, measured in
+        arcseconds. Only applicable for RAW, BIAS_SUBTRACTED, or
+        CALIBRATED data products. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="bopps:deviation_az_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="deviation_el_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="deviation_el">
+    <xs:annotation>
+      <xs:documentation> The calculated deviation in elevation of the
+        telescope boresight from the commanded RA and DEC, measured in
+        arcseconds. Only applicable for RAW, BIAS_SUBTRACTED, or
+        CALIBRATED data products. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="bopps:deviation_el_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="filter">
+    <xs:annotation>
+      <xs:documentation> The number associated with a given wavelength
+        filter on the filter wheel. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="filter_wavelength_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="filter_wavelength">
+    <xs:annotation>
+      <xs:documentation> Wavelength corresponding to the filter number
+        preceding this attribute, typically given in microns
+        </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="bopps:filter_wavelength_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Length" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="gondola_altitude_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="gondola_altitude">
+    <xs:annotation>
+      <xs:documentation> The altitude of the gondola reported by the
+        on-board GPS receiver in kilometers. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="bopps:gondola_altitude_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Length" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="gondola_latitude_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="gondola_latitude">
+    <xs:annotation>
+      <xs:documentation> The latitude of the gondola reported by the
+        on-board GPS receiver in degrees. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="bopps:gondola_latitude_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="gondola_longitude_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="gondola_longitude">
+    <xs:annotation>
+      <xs:documentation> The longitude of the gondola reported by the
+        on-board GPS receiver in degrees. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="bopps:gondola_longitude_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="max_average_dn_for">
+    <xs:annotation>
+      <xs:documentation> Maximum average pixel value of the BIRC field
+        of regard in DN out of the set of images used to generate this
+        data product. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="max_average_e_for">
+    <xs:annotation>
+      <xs:documentation> Maximum average pixel value of the BIRC field
+        of regard in electrons out of the set of images used to generate
+        this data product. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="max_temperature_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="max_temperature">
+    <xs:annotation>
+      <xs:documentation> The maximum calibrated temperature value
+        measured by the sensor. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="bopps:max_temperature_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="measured_at">
+    <xs:annotation>
+      <xs:documentation> The name of the sensor which is providing the
+        measurement. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Preserved">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="min_average_dn_for">
+    <xs:annotation>
+      <xs:documentation> Minimum average pixel value of the BIRC field
+        of regard in DN out of the set of images used to generate this
+        data product. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="min_average_e_for">
+    <xs:annotation>
+      <xs:documentation> Minimum average pixel value of the BIRC field
+        of regard in electrons out of the set of images used to generate
+        this data product. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="min_temperature_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="min_temperature">
+    <xs:annotation>
+      <xs:documentation> The minimum calibrated temperature value
+        measured by the sensor. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="bopps:min_temperature_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="nod_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="nod">
+    <xs:annotation>
+      <xs:documentation> The commanded elevation offset of the telescope
+        off-pointing from the commanded ra, dec. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="bopps:nod_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="observation_description">
+    <xs:annotation>
+      <xs:documentation> General description of the observation. May
+        include target name and a short description of observation
+        goals. For example, "Vesta target aquisition".
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Preserved">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="pointing_description">
+    <xs:annotation>
+      <xs:documentation> General description of the type of target
+        pointing at the time of the observation. For example, "finding
+        target" describes the telescope being panned in several
+        directions in order to aqcuire the target and center it in the
+        field of view. "target acquired" describes the telescope control
+        such that it tries to minimize the drift error between the
+        commanded and measured azimuth and elevation. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Preserved">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="product_type">
+    <xs:annotation>
+      <xs:documentation> The type of product generated: RAW,
+        BIAS_SUBTRACTED, CALIBRATED, SHIFTED, COADDED, FLATFIELD,
+        RELAYS, TEMPS </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+     <xs:minLength value="1"/>
+     <xs:maxLength value="255"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ra_cmd_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="ra_cmd">
+    <xs:annotation>
+      <xs:documentation> The commanded Right Ascension (RA) to point the
+        telescope boresight. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="bopps:ra_cmd_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="solar_el_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="solar_el">
+    <xs:annotation>
+      <xs:documentation> Solar elongation. No further definition
+        supplied. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="bopps:solar_el_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Angle" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="spacecraft_clock_start_count">
+    <xs:annotation>
+      <xs:documentation> The observation start time measured in seconds
+        from January 1, 1970 00:00:00, Unix Epoch time. The
+        spacecraft_clock_start_count is the same value for all image
+        frames created by a single start_observation command.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+    	<xs:pattern value='[0-9]{10}.[0-9]{6}'/>
+     <xs:minLength value="17"/>
+     <xs:maxLength value="17"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="spacecraft_clock_stop_count">
+    <xs:annotation>
+      <xs:documentation> The observation stop time measured in seconds
+        from January 1, 1970 00:00:00, Unix Epoch time. The observation
+        stop time is measured at the end of the integration time for an
+        individual image frame. For a data product that is the result of
+        two or more image frames it is the start of the integration time
+        of the first signal frame in the time ordered list of frames.
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Short_String_Collapsed">
+    	<xs:pattern value='[0-9]{10}.[0-9]{6}'/>
+     <xs:minLength value="17"/>
+     <xs:maxLength value="17"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="starfix">
+    <xs:annotation>
+      <xs:documentation> Integer counter of the number of star fixes
+        executed by the star tracker. Used as a reference for the
+        validity of the pointing information. If the starfix is zero
+        then the telescope position is not known and the rest of the
+        pointing information should be ignored. </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="pds:ASCII_Integer">
+     <xs:minInclusive value="-9223372036854775808"/>
+     <xs:maxInclusive value="9223372036854775807"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="temperature_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="-1.7976931348623157e308"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="temperature">
+    <xs:annotation>
+      <xs:documentation> The calibrated temperature value measured by
+        the sensor. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="bopps:temperature_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Temperature" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="total_integration_time_WO_Units">
+    <xs:restriction base="pds:ASCII_Real">
+     <xs:minInclusive value="3"/>
+     <xs:maxInclusive value="1.7976931348623157e308"/>
+	   </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="total_integration_time">
+    <xs:annotation>
+      <xs:documentation> The total integration time for a single image.
+        For a bias-subtracted image product it is the total integration
+        time for the signal frame. For a product that is the result of
+        more than one bias-signal frame pair it is the integration time
+        of the entire set of images. The bias frame always has an
+        integration time of 3ms. </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="bopps:total_integration_time_WO_Units">
+        <xs:attribute name="unit" type="pds:Units_of_Time" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>
