@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-model href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1P00.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="http://pds.nasa.gov/pds4/mission/bopps/v1/PDS4_BOPPS_1P00_1001.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
 <Product_Observational 
  xmlns="http://pds.nasa.gov/pds4/pds/v1" 
- xmlns:bopps="http://pds.nasa.gov/pds4/mission/bopps/v1"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ xmlns:bopps="http://pds.nasa.gov/pds4/mission/bopps/v1" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1P00.xsd
+ http://pds.nasa.gov/pds4/mission/bopps/v1   http://pds.nasa.gov/pds4/mission/bopps/v1/PDS4_BOPPS_1P00_1001.xsd ">
  <Identification_Area>
   <logical_identifier>urn:nasa:pds:bopps2014:calibrated:jaca_3_041237320_n016_0118e_fit</logical_identifier>
   <version_id>1.0</version_id>
   <title>2014 BOPPS BIRC Observations, Calibrated Bias-Subtracted Image in electrons</title>
-  <information_model_version>[IM_VERSION]</information_model_version>
+  <information_model_version>1.25.0.0</information_model_version>
   <product_class>Product_Observational</product_class>
  </Identification_Area>
  <Observation_Area>
@@ -27,38 +31,17 @@
     </Science_Facets>
   </Primary_Result_Summary>
   <Investigation_Area>
-   <name>BOPPS</name>
-   <type>Mission</type>
+   <name>None</name>
+   <type>Individual Investigation</type>
    <Internal_Reference>
-    <lid_reference>urn:nasa:pds:context:investigation:mission.bopps
-        </lid_reference>
+    <lid_reference>urn:nasa:pds:context:investigation:individual.none</lid_reference>
     <reference_type>data_to_investigation</reference_type>
    </Internal_Reference>
   </Investigation_Area>
   <Observing_System>
    <Observing_System_Component>
-    <name>BOPPS Gondola</name>
-    <type>Balloon</type>
-    <Internal_Reference>
-     <lid_reference>urn:nasa:pds:context:airborne:balloon.bopps</lid_reference>
-     <reference_type>is_airborne</reference_type>
-    </Internal_Reference>
-   </Observing_System_Component>
-   <Observing_System_Component>
-    <name>BOPPS Telescope</name>
+    <name>None</name>
     <type>Telescope</type>
-    <Internal_Reference>
-     <lid_reference>urn:nasa:pds:context:telescope:bopps.sto</lid_reference>
-     <reference_type>is_telescope</reference_type>
-    </Internal_Reference>
-   </Observing_System_Component>
-   <Observing_System_Component>
-    <name>Bopps Infra-Red Camera (BIRC)</name>
-    <type>Instrument</type>
-    <Internal_Reference>
-     <lid_reference>urn:nasa:pds:context:instrument:birc.sto.telescope</lid_reference>
-     <reference_type>is_instrument</reference_type>
-    </Internal_Reference>
    </Observing_System_Component>
   </Observing_System>
   <Target_Identification>
@@ -107,12 +90,7 @@
   <Discipline_Area>
   </Discipline_Area>
  </Observation_Area>
- <Reference_List>
-  <Internal_Reference>
-   <lidvid_reference>urn:nasa:pds:bopps2014:biassub:jaca_3_041237320_n016_0118b_fit::1.0</lidvid_reference>
-   <reference_type>data_to_raw_product</reference_type>
-  </Internal_Reference>
- </Reference_List>
+
  <File_Area_Observational>
   <File>
    <file_name>No.Data</file_name>
