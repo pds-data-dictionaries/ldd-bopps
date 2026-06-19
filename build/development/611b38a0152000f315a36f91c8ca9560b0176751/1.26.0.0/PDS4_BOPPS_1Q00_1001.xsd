@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:bopps  Version:1.0.0.0 - Wed Jun 17 22:03:31 UTC 2026 -->
+  <!-- PDS4 XML/Schema for Name Space Id:bopps  Version:1.0.0.1 - Fri Jun 19 22:46:55 UTC 2026 -->
   <!-- Generated from the PDS4 Information Model Version 1.26.0.0 - System Build 16.1	 -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
   <!-- 1.26.0.0 - pds: - Common Dictionary                                       -->
-  <!-- 1.0.0.0 - bopps: - BOPPS Data Dictionary                                  -->
+  <!-- 1.0.0.1 - bopps: - BOPPS Data Dictionary                                  -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     targetNamespace="http://pds.nasa.gov/pds4/mission/bopps/v1"
@@ -13,20 +13,20 @@
     xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
     elementFormDefault="qualified"
     attributeFormDefault="unqualified"
-    version="1.0.0.0">
+    version="1.0.0.1">
  
     <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1Q00.xsd"/>
  
   <xs:annotation>
     <xs:documentation>
 
-		This revised dictionary is content-equivalent to the 1.0.0.1 version of the original
-		BOPPS mission dictionary schemas. It has been created by starting the with pre-archival 
+		This revised IngestLDD file is content-equivalent to the 1.0.0.1 version of the original
+		BOPPS mission dictionary schemas. It has been created by starting with the pre-archival 
 		version 1.0.0.0 IngestLDD file, then upgrading the Ingest LDD structure to conform to 
 		current PDS4 dictionary requirements, and then updating the mission attributes to reflect
 		the Software Interface Specification Rev. 1.2, effective June 2015, that was used to create
-		the archival labels. Unfortunately, this document did not include definitions for each
-		attribute. 
+		the archival labels, with some definitions harvested from the the archived v1.0.0.1 
+		BOPPS schema.
 	
     </xs:documentation>
   </xs:annotation>
@@ -109,9 +109,9 @@
 
   <xs:simpleType name="airmass">
     <xs:annotation>
-      <xs:documentation> Atmospheric airmass - that is, "airmass" is
-        being used in the observational astronomy sense. No definition
-        supplied. </xs:documentation>
+      <xs:documentation> The ratio of the optical path length of light
+        from the target passing through Earth's atmosphere over the
+        optical path length from sea level to zenith. </xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Real">
      <xs:minInclusive value="-1.7976931348623157e308"/>
@@ -150,7 +150,10 @@
 
   <xs:complexType name="boresight_el">
     <xs:annotation>
-<xs:documentation> No definition supplied. </xs:documentation>
+      <xs:documentation> The calculated elevation angle of the telescope
+        boresight. Measured between the plane perpendicular to the
+        surface normal vector at the sub-gondola point and the telescope
+        boresight vector to the target. </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="bopps:boresight_el_WO_Units">
@@ -161,7 +164,15 @@
 
   <xs:simpleType name="centx">
     <xs:annotation>
-<xs:documentation> No definition supplied. </xs:documentation>
+      <xs:documentation> The approximate location along the X-axis of
+        the target in the shifted image. The pixel in the upper left
+        corner of the image is designated as 0,0 and x pixel location
+        increases from left to right while y pixel location increases
+        from top to bottom. This attribute only exists in the shifted
+        products due to the difficulty in algorithmically determining
+        the center location of dim targets in single image products
+        (i.e. raw, bias-subtracted, calibrated). Value is set to 999 if
+        the target could not be found in the image. </xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Integer">
      <xs:minInclusive value="-9223372036854775808"/>
@@ -171,7 +182,15 @@
 
   <xs:simpleType name="centy">
     <xs:annotation>
-<xs:documentation> No definition supplied. </xs:documentation>
+      <xs:documentation> The approximate location along the Y-axis of
+        the target in the shifted image. The pixel in the upper left
+        corner of the image is designated as 0,0 and x pixel location
+        increases from left to right while y pixel location increases
+        from top to bottom. This attribute only exists in the shifted
+        products due to the difficulty in algorithmically determining
+        the center location of dim targets in single image products
+        (i.e. raw, bias-subtracted, calibrated). Value is set to 999 if
+        the target could not be found in the image. </xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Integer">
      <xs:minInclusive value="-9223372036854775808"/>
@@ -260,9 +279,8 @@
 
   <xs:complexType name="filter_wavelength">
     <xs:annotation>
-      <xs:documentation> Wavelength corresponding to the filter number
-        preceding this attribute, typically given in microns
-        </xs:documentation>
+      <xs:documentation> The center wavelength of the filter in
+        micrometers. </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="bopps:filter_wavelength_WO_Units">
@@ -448,7 +466,7 @@
     <xs:annotation>
       <xs:documentation> General description of the observation. May
         include target name and a short description of observation
-        goals. For example, "Vesta target aquisition".
+        goals. For example, "Vesta target acquisition".
         </xs:documentation>
     </xs:annotation>
     <xs:restriction base="pds:ASCII_Short_String_Preserved">
@@ -513,8 +531,10 @@
 
   <xs:complexType name="solar_el">
     <xs:annotation>
-      <xs:documentation> Solar elongation. No further definition
-        supplied. </xs:documentation>
+      <xs:documentation> The calculated solar elevation angle, measured
+        between the plane perpendicular to the surface normal vector at
+        the sub-gondola point and the vector from the gondola to the
+        sun. </xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="bopps:solar_el_WO_Units">
