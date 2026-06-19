@@ -3,24 +3,41 @@
 
 <Ingest_LDD xmlns="http://pds.nasa.gov/pds4/pds/v1"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.xsd ">
+	xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1Q00.xsd ">
 	<name>BOPPS Data Dictionary</name>
-	<ldd_version_id>1.0</ldd_version_id>
+	<ldd_version_id>1.0.0.1</ldd_version_id>
 	<dictionary_type>Mission</dictionary_type>
 	<full_name>Raymond Espiritu; Anne Raugh (ed.)</full_name>
 	<steward_id>SBN</steward_id>
 	<namespace_id>bopps</namespace_id>
 	<comment>
-		This revised dictionary is content-equivalent to the 1.0.0.1 version of the original
-		BOPPS mission dictionary schemas. It has been created by starting the with pre-archival 
+		This revised IngestLDD file is content-equivalent to the 1.0.0.1 version of the original
+		BOPPS mission dictionary schemas. It has been created by starting with the pre-archival 
 		version 1.0.0.0 IngestLDD file, then upgrading the Ingest LDD structure to conform to 
 		current PDS4 dictionary requirements, and then updating the mission attributes to reflect
 		the Software Interface Specification Rev. 1.2, effective June 2015, that was used to create
-		the archival labels. Unfortunately, this document did not include definitions for each
-		attribute. 
+		the archival labels, with some definitions harvested from the the archived v1.0.0.1 
+		BOPPS schema.
 	</comment>
 	<last_modification_date_time>2026-06-11</last_modification_date_time>
 
+	<DD_Attribute>
+		<name>airmass</name>
+		<version_id>1.0</version_id>
+		<local_identifier>airmass</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>ACR</submitter_name>
+		<definition>
+			The ratio of the optical path length of light
+			from the target passing through Earth's atmosphere over the
+			optical path length from sea level to zenith.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
 	<DD_Attribute>
 		<name>average_dn_for</name>
 		<version_id>1.0</version_id>
@@ -54,70 +71,85 @@
 	</DD_Attribute>
 
 	<DD_Attribute>
-		<name>max_average_dn_for</name>
+		<name>boresight_el</name>
 		<version_id>1.0</version_id>
-		<local_identifier>max_average_dn_for</local_identifier>
+		<local_identifier>boresight_el</local_identifier>
 		<nillable_flag>false</nillable_flag>
-		<submitter_name>Raymond Espiritu</submitter_name>
+		<submitter_name>ACR</submitter_name>
 		<definition>
-			Maximum average pixel value of the BIRC field of regard in DN out of the set of images used 
-			to generate this data product.
+			The calculated elevation angle of the
+			telescope boresight. Measured between the plane perpendicular to
+			the surface normal vector at the sub-gondola point and the
+			telescope boresight vector to the target.
 		</definition>
-
 		<DD_Value_Domain>
 			<enumeration_flag>false</enumeration_flag>
 			<value_data_type>ASCII_Real</value_data_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-
-	<DD_Attribute>
-		<name>max_average_e_for</name>
-		<version_id>1.0</version_id>
-		<local_identifier>max_average_e_for</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>Raymond Espiritu</submitter_name>
-		<definition>
-			Maximum average pixel value of the BIRC field of regard in electrons out of the set of images used
-			to generate this data product.
-		</definition>
-
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	
 	<DD_Attribute>
-		<name>min_average_dn_for</name>
+		<name>centx</name>
 		<version_id>1.0</version_id>
-		<local_identifier>min_average_dn_for</local_identifier>
+		<local_identifier>centx</local_identifier>
 		<nillable_flag>false</nillable_flag>
-		<submitter_name>Raymond Espiritu</submitter_name>
+		<submitter_name>ACR</submitter_name>
 		<definition>
-			Minimum average pixel value of the BIRC field of regard in DN out of the set of images used
-			 to generate this data product.
+			The approximate location along the X-axis of
+			the target in the shifted image. The pixel in the upper left
+			corner of the image is designated as 0,0 and x pixel location
+			increases from left to right while y pixel location increases
+			from top to bottom. This attribute only exists in the shifted
+			products due to the difficulty in algorithmically determining the
+			center location of dim targets in single image products (i.e.
+			raw, bias-subtracted, calibrated). Value is set to 999 if the
+			target could not be found in the image.
 		</definition>
-
 		<DD_Value_Domain>
 			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Real</value_data_type>
+			<value_data_type>ASCII_Integer</value_data_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
-
+	
 	<DD_Attribute>
-		<name>min_average_e_for</name>
+		<name>centy</name>
 		<version_id>1.0</version_id>
-		<local_identifier>min_average_e_for</local_identifier>
+		<local_identifier>centy</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>ACR</submitter_name>
+		<definition>
+			The approximate location along the Y-axis of
+			the target in the shifted image. The pixel in the upper left
+			corner of the image is designated as 0,0 and x pixel location
+			increases from left to right while y pixel location increases
+			from top to bottom. This attribute only exists in the shifted
+			products due to the difficulty in algorithmically determining the
+			center location of dim targets in single image products (i.e.
+			raw, bias-subtracted, calibrated). Value is set to 999 if the
+			target could not be found in the image.
+		</definition>
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Integer</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<DD_Attribute>
+		<name>dec_cmd</name>
+		<version_id>1.0</version_id>
+		<local_identifier>dec_cmd</local_identifier>
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>Raymond Espiritu</submitter_name>
 		<definition>
-			Minimum average pixel value of the BIRC field of regard in electrons out of the set of images used
-			 to generate this data product.
+			The commanded Declination (DEC) to point the telescope boresight.
 		</definition>
-
+		
 		<DD_Value_Domain>
 			<enumeration_flag>false</enumeration_flag>
 			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
+			<specified_unit_id>deg</specified_unit_id>			
 		</DD_Value_Domain>
 	</DD_Attribute>
 	
@@ -228,8 +260,8 @@
 		<nillable_flag>false</nillable_flag>
 		<submitter_name>Anne Raugh</submitter_name>
 		<definition>
-			Wavelength corresponding to the filter number preceding this attribute, 
-			typically given in microns
+			The center wavelength of the filter in
+			micrometers.
 		</definition>
 		<DD_Value_Domain>
 			<enumeration_flag>false</enumeration_flag>
@@ -293,6 +325,58 @@
 	</DD_Attribute>
 
 	<DD_Attribute>
+		<name>max_average_dn_for</name>
+		<version_id>1.0</version_id>
+		<local_identifier>max_average_dn_for</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			Maximum average pixel value of the BIRC field of regard in DN out of the set of images used 
+			to generate this data product.
+		</definition>
+		
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<DD_Attribute>
+		<name>max_average_e_for</name>
+		<version_id>1.0</version_id>
+		<local_identifier>max_average_e_for</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			Maximum average pixel value of the BIRC field of regard in electrons out of the set of images used
+			to generate this data product.
+		</definition>
+		
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<DD_Attribute>
+		<name>max_temperature</name>
+		<version_id>1.0</version_id>
+		<local_identifier>max_temperature</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			The maximum calibrated temperature value measured by the sensor.
+		</definition>
+		
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+			<specified_unit_id>degC</specified_unit_id>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<DD_Attribute>
 		<name>measured_at</name>
 		<version_id>1.0</version_id>
 		<local_identifier>measured_at</local_identifier>
@@ -301,10 +385,62 @@
 		<definition>
 			The name of the sensor which is providing the measurement.
 		</definition>
-
+		
 		<DD_Value_Domain>
 			<enumeration_flag>false</enumeration_flag>
 			<value_data_type>ASCII_Short_String_Preserved</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<DD_Attribute>
+		<name>min_average_dn_for</name>
+		<version_id>1.0</version_id>
+		<local_identifier>min_average_dn_for</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			Minimum average pixel value of the BIRC field of regard in DN out of the set of images used
+			to generate this data product.
+		</definition>
+		
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<DD_Attribute>
+		<name>min_average_e_for</name>
+		<version_id>1.0</version_id>
+		<local_identifier>min_average_e_for</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			Minimum average pixel value of the BIRC field of regard in electrons out of the set of images used
+			to generate this data product.
+		</definition>
+		
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+		</DD_Value_Domain>
+	</DD_Attribute>
+	
+	<DD_Attribute>
+		<name>min_temperature</name>
+		<version_id>1.0</version_id>
+		<local_identifier>min_temperature</local_identifier>
+		<nillable_flag>false</nillable_flag>
+		<submitter_name>Raymond Espiritu</submitter_name>
+		<definition>
+			The minimum calibrated temperature value measured by the sensor.
+		</definition>
+		
+		<DD_Value_Domain>
+			<enumeration_flag>false</enumeration_flag>
+			<value_data_type>ASCII_Real</value_data_type>
+			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
+			<specified_unit_id>degC</specified_unit_id>
 		</DD_Value_Domain>
 	</DD_Attribute>
 
@@ -335,7 +471,7 @@
 		<submitter_name>Raymond Espiritu</submitter_name>
 		<definition>
 			General description of the observation. May include target name and a short description of observation goals.
-			For example, "Vesta target aquisition".
+			For example, "Vesta target acquisition".
 		</definition>
 
 		<DD_Value_Domain>
@@ -360,36 +496,6 @@
 		<DD_Value_Domain>
 			<enumeration_flag>false</enumeration_flag>
 			<value_data_type>ASCII_Short_String_Preserved</value_data_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	
-	<DD_Attribute>
-		<name>centx</name>
-		<version_id>1.0</version_id>
-		<local_identifier>centx</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>ACR</submitter_name>
-		<definition>
-			No definition supplied.
-		</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Integer</value_data_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	
-	<DD_Attribute>
-		<name>centy</name>
-		<version_id>1.0</version_id>
-		<local_identifier>centy</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>ACR</submitter_name>
-		<definition>
-			No definition supplied.
-		</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Integer</value_data_type>
 		</DD_Value_Domain>
 	</DD_Attribute>
 	
@@ -452,8 +558,6 @@
 				<value_meaning>Product is an ASCII table containing the temperature values reported by the BIRC instrument.
 				</value_meaning>
 			</DD_Permissible_Value>
-			
-
 		</DD_Value_Domain>
 	</DD_Attribute>
 
@@ -476,20 +580,20 @@
 	</DD_Attribute>
 
 	<DD_Attribute>
-		<name>dec_cmd</name>
+		<name>solar_el</name>
 		<version_id>1.0</version_id>
-		<local_identifier>dec_cmd</local_identifier>
+		<local_identifier>solar_el</local_identifier>
 		<nillable_flag>false</nillable_flag>
-		<submitter_name>Raymond Espiritu</submitter_name>
+		<submitter_name>ACR</submitter_name>
 		<definition>
-			The commanded Declination (DEC) to point the telescope boresight.
+			The calculated solar elevation angle, measured
+			between the plane perpendicular to the surface normal vector at
+			the sub-gondola point and the vector from the gondola to the sun.
 		</definition>
-
 		<DD_Value_Domain>
 			<enumeration_flag>false</enumeration_flag>
 			<value_data_type>ASCII_Real</value_data_type>
 			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-			<specified_unit_id>deg</specified_unit_id>			
 		</DD_Value_Domain>
 	</DD_Attribute>
 	
@@ -562,54 +666,6 @@
 	</DD_Attribute>
 	
 	<DD_Attribute>
-		<name>solar_el</name>
-		<version_id>1.0</version_id>
-		<local_identifier>solar_el</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>ACR</submitter_name>
-		<definition>
-			Solar elongation. No further definition supplied.
-		</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Real</value_data_type>
-			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	
-	<DD_Attribute>
-		<name>boresight_el</name>
-		<version_id>1.0</version_id>
-		<local_identifier>boresight_el</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>ACR</submitter_name>
-		<definition>
-			No definition supplied.
-		</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Real</value_data_type>
-			<unit_of_measure_type>Units_of_Angle</unit_of_measure_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	
-	<DD_Attribute>
-		<name>airmass</name>
-		<version_id>1.0</version_id>
-		<local_identifier>airmass</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>ACR</submitter_name>
-		<definition>
-			Atmospheric airmass - that is, "airmass" is being used in the 
-			observational astronomy sense. No definition supplied.
-		</definition>
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Real</value_data_type>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	
-	<DD_Attribute>
 		<name>temperature</name>
 		<version_id>1.0</version_id>
 		<local_identifier>temperature</local_identifier>
@@ -627,42 +683,6 @@
 		</DD_Value_Domain>
 	</DD_Attribute>
 	
-	<DD_Attribute>
-		<name>min_temperature</name>
-		<version_id>1.0</version_id>
-		<local_identifier>min_temperature</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>Raymond Espiritu</submitter_name>
-		<definition>
-			The minimum calibrated temperature value measured by the sensor.
-		</definition>
-
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Real</value_data_type>
-			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
-			<specified_unit_id>degC</specified_unit_id>
-		</DD_Value_Domain>
-	</DD_Attribute>
-	
-	<DD_Attribute>
-		<name>max_temperature</name>
-		<version_id>1.0</version_id>
-		<local_identifier>max_temperature</local_identifier>
-		<nillable_flag>false</nillable_flag>
-		<submitter_name>Raymond Espiritu</submitter_name>
-		<definition>
-			The maximum calibrated temperature value measured by the sensor.
-		</definition>
-
-		<DD_Value_Domain>
-			<enumeration_flag>false</enumeration_flag>
-			<value_data_type>ASCII_Real</value_data_type>
-			<unit_of_measure_type>Units_of_Temperature</unit_of_measure_type>
-			<specified_unit_id>degC</specified_unit_id>
-		</DD_Value_Domain>
-	</DD_Attribute>
-
 	<DD_Attribute>
 		<name>total_integration_time</name>
 		<version_id>1.0</version_id>
