@@ -1,34 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1E00.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1700.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
 <Ingest_LDD xmlns="http://pds.nasa.gov/pds4/pds/v1"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1Q00.xsd ">
+	xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1700.xsd ">
 	<name>BOPPS Data Dictionary</name>
-	<ldd_version_id>2.0.0.0</ldd_version_id>
-	<dictionary_type>Mission</dictionary_type>
+	<ldd_version_id>1.0.0.1</ldd_version_id>
 	<full_name>Raymond Espiritu; Anne Raugh (ed.)</full_name>
 	<steward_id>SBN</steward_id>
 	<namespace_id>bopps</namespace_id>
 	<comment>
 		This revised IngestLDD file is content-equivalent to the 1.0.0.1 version of the original
-		BOPPS mission dictionary schemas with some minor corrections and reference updates. 
-		It was been created by modifying the back-ported version 1.0.0.1 IngestLDD file. 
+		BOPPS mission dictionary schemas. It has been created by starting with the pre-archival 
+		version 1.0.0.0 IngestLDD file, then upgrading the Ingest LDD structure to conform to 
+		current PDS4 dictionary requirements, and then updating the mission attributes to reflect
+		the Software Interface Specification Rev. 1.2, effective June 2015, that was used to create
+		the archival labels, with some definitions harvested from the the archived v1.0.0.1 
+		BOPPS schema. 
 		
-		For this version, PDS4 IM version references have been updated to version 1.26.0.0
-		(1Q00 in file references), the Ingest_LDD structure has been updated to conform to
-		IM 1.26.0.0 structure requirements, version_id values of "0.0" have been updated to
-		"1.0" and class names that appeared with lowercase names in the original BOPPS
-		dictionary have been changed to start case, as required (but not validated at the
-		time) by the PDS4 standards then and now. This change is reflected in the BOPPS
-        v2 bundle product labels. An unused class called "instrument_parameters" has 
-        beed dropped from this version.
+		These schema files would have been build against the 1.7.0.0 version of the PDS4 IM. There
+		have been non-backwards compatible changed to the Ingest_LDD structure since then. 
+		Consequently, this Ingest_LDD could only be built using versions of the LDDTool that support
+		IM 1.7.0.0, using the appropriate command line options to indicate that this is a mission
+		dictionary rather than a discipline dictionary.
 		
-		The change in class name case and the altered structure of Ingest_LDD are both
-		nonbackwards-compatible changes, so the LDD version has been incremented to 
-		2.0.0.0 in keeping with semantic version conventions.
+		Note also that the lower-case class names were not valid at the time, but were not caught
+		either by the validation software, reviewers, or node personnel prior to archiving.
 	</comment>
-	<last_modification_date_time>2026-07-15</last_modification_date_time>
+	<last_modification_date_time>2026-06-11</last_modification_date_time>
 
 	<DD_Attribute>
 		<name>airmass</name>
@@ -717,7 +716,7 @@
 
 	<!-- after this is the DD_Class definitions -->
 	<DD_Class>
-		<name>Observation_Parameters</name>
+		<name>observation_parameters</name>
 		<version_id>1.0</version_id>
 		<local_identifier>observation_parameters</local_identifier>
 		<submitter_name>Raymond Espiritu</submitter_name>
@@ -727,112 +726,112 @@
 		<!-- to do: enter for every attribute that goes in this class -->
 
 		<DD_Association>
-			<identifier_reference>spacecraft_clock_start_count</identifier_reference>
+			<local_identifier>spacecraft_clock_start_count</local_identifier>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>1</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 
 		<DD_Association>
-			<identifier_reference>spacecraft_clock_stop_count</identifier_reference>
+			<local_identifier>spacecraft_clock_stop_count</local_identifier>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>1</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 
 		<DD_Association>
-			<identifier_reference>total_integration_time</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		
-		<DD_Association>
-			<identifier_reference>average_dn_for</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-
-		<DD_Association>
-			<identifier_reference>average_e_for</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		
-		<DD_Association>
-			<identifier_reference>max_average_dn_for</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-
-		<DD_Association>
-			<identifier_reference>min_average_dn_for</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-
-		<DD_Association>
-			<identifier_reference>max_average_e_for</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-
-		<DD_Association>
-			<identifier_reference>min_average_e_for</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>0</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-
-		<DD_Association>
-			<identifier_reference>filter</identifier_reference>
+			<local_identifier>total_integration_time</local_identifier>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>1</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		
 		<DD_Association>
-			<identifier_reference>filter_wavelength</identifier_reference>
+			<local_identifier>average_dn_for</local_identifier>
 			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		
-		<DD_Association>
-			<identifier_reference>product_type</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
+			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 
 		<DD_Association>
-			<identifier_reference>observation_description</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-
-		<DD_Association>
-			<identifier_reference>pointing_description</identifier_reference>
-			<reference_type>attribute_of</reference_type>
-			<minimum_occurrences>1</minimum_occurrences>
-			<maximum_occurrences>1</maximum_occurrences>
-		</DD_Association>
-		
-		<DD_Association>
-			<identifier_reference>centx</identifier_reference>
+			<local_identifier>average_e_for</local_identifier>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		
 		<DD_Association>
-			<identifier_reference>centy</identifier_reference>
+			<local_identifier>max_average_dn_for</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<local_identifier>min_average_dn_for</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<local_identifier>max_average_e_for</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<local_identifier>min_average_e_for</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<local_identifier>filter</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>1</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+		<DD_Association>
+			<local_identifier>filter_wavelength</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>1</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+		<DD_Association>
+			<local_identifier>product_type</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>1</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<local_identifier>observation_description</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>1</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+
+		<DD_Association>
+			<local_identifier>pointing_description</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>1</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+		<DD_Association>
+			<local_identifier>centx</local_identifier>
+			<reference_type>attribute_of</reference_type>
+			<minimum_occurrences>0</minimum_occurrences>
+			<maximum_occurrences>1</maximum_occurrences>
+		</DD_Association>
+		
+		<DD_Association>
+			<local_identifier>centy</local_identifier>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
@@ -841,7 +840,7 @@
 	</DD_Class>
 
 	<DD_Class>
-		<name>Instrument_Temperature</name>
+		<name>instrument_temperature</name>
 		<version_id>1.0</version_id>
 		<local_identifier>instrument_temperature</local_identifier>
 		<submitter_name>Raymond Espiritu</submitter_name>
@@ -849,21 +848,21 @@
 		<element_flag>true</element_flag>
 
 		<DD_Association>
-			<identifier_reference>measured_at</identifier_reference>
+			<local_identifier>measured_at</local_identifier>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>1</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 
 		<DD_Association>
-			<identifier_reference>temperature</identifier_reference>
+			<local_identifier>temperature</local_identifier>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		
 		<DD_Association>
-			<identifier_reference>min_temperature</identifier_reference>
+			<local_identifier>min_temperature</local_identifier>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
@@ -871,7 +870,7 @@
 		
 		
 		<DD_Association>
-			<identifier_reference>max_temperature</identifier_reference>
+			<local_identifier>max_temperature</local_identifier>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
@@ -880,7 +879,7 @@
 	</DD_Class>
 	
 	<DD_Class>
-		<name>Telescope_Geometry</name>
+		<name>telescope_geometry</name>
 		<version_id>1.0</version_id>
 		<local_identifier>telescope_geometry</local_identifier>
 		<submitter_name>Raymond Espiritu</submitter_name>
@@ -891,84 +890,84 @@
 		<element_flag>true</element_flag>
 
 		<DD_Association>
-			<identifier_reference>gondola_latitude</identifier_reference>
+			<local_identifier>gondola_latitude</local_identifier>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>1</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 
 		<DD_Association>
-			<identifier_reference>gondola_longitude</identifier_reference>
+			<local_identifier>gondola_longitude</local_identifier>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>1</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 
 		<DD_Association>
-			<identifier_reference>gondola_altitude</identifier_reference>
+			<local_identifier>gondola_altitude</local_identifier>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>1</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 
 		<DD_Association>
-			<identifier_reference>ra_cmd</identifier_reference>
+			<local_identifier>ra_cmd</local_identifier>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>1</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 
 		<DD_Association>
-			<identifier_reference>dec_cmd</identifier_reference>
+			<local_identifier>dec_cmd</local_identifier>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>1</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 
 		<DD_Association>
-			<identifier_reference>deviation_az</identifier_reference>
+			<local_identifier>deviation_az</local_identifier>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 
 		<DD_Association>
-			<identifier_reference>deviation_el</identifier_reference>
+			<local_identifier>deviation_el</local_identifier>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 
 		<DD_Association>
-			<identifier_reference>nod</identifier_reference>
+			<local_identifier>nod</local_identifier>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 
 		<DD_Association>
-			<identifier_reference>starfix</identifier_reference>
+			<local_identifier>starfix</local_identifier>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		
 		<DD_Association>
-			<identifier_reference>solar_el</identifier_reference>
+			<local_identifier>solar_el</local_identifier>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		
 		<DD_Association>
-			<identifier_reference>boresight_el</identifier_reference>
+			<local_identifier>boresight_el</local_identifier>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
 		</DD_Association>
 		
 		<DD_Association>
-			<identifier_reference>airmass</identifier_reference>
+			<local_identifier>airmass</local_identifier>
 			<reference_type>attribute_of</reference_type>
 			<minimum_occurrences>0</minimum_occurrences>
 			<maximum_occurrences>1</maximum_occurrences>
