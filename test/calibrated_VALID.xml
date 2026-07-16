@@ -2,7 +2,7 @@
 
 <Product_Observational 
  xmlns="http://pds.nasa.gov/pds4/pds/v1" 
- xmlns:bopps="http://pds.nasa.gov/pds4/mission/bopps/v1" 
+ xmlns:bopps="http://pds.nasa.gov/pds4/mission/bopps/v2" 
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
 
  <Identification_Area>
