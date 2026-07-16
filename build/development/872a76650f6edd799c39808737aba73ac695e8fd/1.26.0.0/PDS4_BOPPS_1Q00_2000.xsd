@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <!-- PDS4 XML/Schema for Name Space Id:bopps  Version:1.0.0.1 - Fri Jun 19 22:46:55 UTC 2026 -->
+  <!-- PDS4 XML/Schema for Name Space Id:bopps  Version:2.0.0.0 - Thu Jul 16 20:46:37 UTC 2026 -->
   <!-- Generated from the PDS4 Information Model Version 1.26.0.0 - System Build 16.1	 -->
   <!-- *** This PDS4 product schema is an operational deliverable. *** -->
   <!--                                                                           -->
   <!--               Dictionary Stack                                            -->
   <!-- 1.26.0.0 - pds: - Common Dictionary                                       -->
-  <!-- 1.0.0.1 - bopps: - BOPPS Data Dictionary                                  -->
+  <!-- 2.0.0.0 - bopps: - BOPPS Data Dictionary                                  -->
   <!--                                                                           -->
   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    targetNamespace="http://pds.nasa.gov/pds4/mission/bopps/v1"
-    xmlns:bopps="http://pds.nasa.gov/pds4/mission/bopps/v1"
+    targetNamespace="http://pds.nasa.gov/pds4/mission/bopps/v2"
+    xmlns:bopps="http://pds.nasa.gov/pds4/mission/bopps/v2"
     xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
     elementFormDefault="qualified"
     attributeFormDefault="unqualified"
-    version="1.0.0.1">
+    version="2.0.0.0">
  
     <xs:import namespace="http://pds.nasa.gov/pds4/pds/v1" schemaLocation="https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1Q00.xsd"/>
  
@@ -21,12 +21,21 @@
     <xs:documentation>
 
 		This revised IngestLDD file is content-equivalent to the 1.0.0.1 version of the original
-		BOPPS mission dictionary schemas. It has been created by starting with the pre-archival 
-		version 1.0.0.0 IngestLDD file, then upgrading the Ingest LDD structure to conform to 
-		current PDS4 dictionary requirements, and then updating the mission attributes to reflect
-		the Software Interface Specification Rev. 1.2, effective June 2015, that was used to create
-		the archival labels, with some definitions harvested from the the archived v1.0.0.1 
-		BOPPS schema.
+		BOPPS mission dictionary schemas with some minor corrections and reference updates. 
+		It was been created by modifying the back-ported version 1.0.0.1 IngestLDD file. 
+		
+		For this version, PDS4 IM version references have been updated to version 1.26.0.0
+		(1Q00 in file references), the Ingest_LDD structure has been updated to conform to
+		IM 1.26.0.0 structure requirements, version_id values of "0.0" have been updated to
+		"1.0" and class names that appeared with lowercase names in the original BOPPS
+		dictionary have been changed to start case, as required (but not validated at the
+		time) by the PDS4 standards then and now. This change is reflected in the BOPPS
+        v2 bundle product labels. An unused class called "instrument_parameters" has 
+        beed dropped from this version.
+		
+		The change in class name case and the altered structure of Ingest_LDD are both
+		nonbackwards-compatible changes, so the LDD version has been incremented to 
+		2.0.0.0 in keeping with semantic version conventions.
 	
     </xs:documentation>
   </xs:annotation>
