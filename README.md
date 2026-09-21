@@ -20,8 +20,7 @@ Archive curator: Anne Raugh (@acraugh), Small Bodies Node (SBN)
 # Documentation
 
 No user's guide was created for this dictionary at the time of creation.
-<!-- EXAMPLE
-     are located at https://pds-data-dictionaries.github.io/ldd-template.
+A minimal description can be found at https://pds-data-dictionaries.github.io/ldd-bopps.
 -->
 
 # Latest Release
@@ -46,9 +45,9 @@ No user's guide was created for this dictionary at the time of creation.
        * Review the [Change Log] (ChangeLog.md)
        * Review the [Change Log] (src/CHANGELOG.md)
 -->     
-* Download dictionary files from the [PDS Data Dictionaries Page](https://pds.nasa.gov/datastandards/dictionaries/#bopps)
-* On [GitHub](../../releases/latest)
-* Review the [Change log]({change log file name})
+* Download mission dictionary files from the [PDS Data Dictionaries - Mission Page](https://pds.nasa.gov/datastandards/dictionaries/index-missions.shtml
+* Latest release of this dictionary on [GitHub](../../releases/latest)
+* Review the [Change log](ChangeLog.md)
 
 # About This Repository
 <!-- The top-level directory structure and names must not change, but if
